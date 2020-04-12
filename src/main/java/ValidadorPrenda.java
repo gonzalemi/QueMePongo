@@ -8,17 +8,17 @@ public class ValidadorPrenda {
 
     private void validarTipo(Prenda prenda) {
         if (prenda.getTipo() == null)
-            throw new SinTipoException("");
+            throw new SinTipoException("La prenda seleccionada no posee tipo");
     }
 
     private void validarTela(Prenda prenda) {
         if (prenda.getTela().isEmpty())
-            throw new SinTelaException("");
+            throw new SinTelaException("La prenda seleccionada no posee tela");
     }
 
     private void validarColorPrincipal(Prenda prenda) {
         if (prenda.getColorPrincipal().isEmpty())
-            throw new SinColorPrincipalException("");
+            throw new SinColorPrincipalException("La prenda seleccionada no posee color principal");
     }
 
     public class SinTipoException extends RuntimeException {
