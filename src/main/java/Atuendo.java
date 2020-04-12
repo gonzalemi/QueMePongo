@@ -9,5 +9,4 @@ public class Atuendo {
         validadorPrenda.validar(prenda);
         prendas.add(prenda);
     }
-
 }

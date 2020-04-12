@@ -38,5 +38,4 @@ public class ValidadorPrenda {
             super(message);
         }
     }
-
 }
