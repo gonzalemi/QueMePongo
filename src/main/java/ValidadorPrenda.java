@@ -2,7 +2,7 @@ public class ValidadorPrenda {
 
     public void validar(Prenda prenda) {
         validarTipo(prenda);
-        validarTela(prenda);
+        validarMaterial(prenda);
         validarColorPrincipal(prenda);
 
     }
@@ -12,7 +12,7 @@ public class ValidadorPrenda {
             throw new SinTipoException("La prenda seleccionada no posee tipo");
     }
 
-    private void validarTela(Prenda prenda) {
+    private void validarMaterial(Prenda prenda) {
         if (prenda.getMaterial() == null)
             throw new SinMaterialException("La prenda seleccionada no posee material");
     }
