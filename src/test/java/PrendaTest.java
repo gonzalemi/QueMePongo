@@ -4,10 +4,12 @@ import org.junit.Test;
 
 public class PrendaTest {
     public Prenda prenda;
+    Color color;
 
     @Before
     public void init() {
         prenda = TestHelper.ProveedorPrendas.parDeAnteojos();
+        color = new Color(1,2, 4);
     }
 
     @Test
@@ -29,7 +31,7 @@ public class PrendaTest {
 
     @Test
     public void unUsuarioDebePoderIndicarElColorPrincipalDeUnaPrenda() {
-        Color color = new Color(1,2, 4);
+
         prenda.setColorPrincipal(color);
 
         Assert.assertEquals(color, prenda.getColorPrincipal());
@@ -37,8 +39,24 @@ public class PrendaTest {
 
     @Test
     public void unUsuarioDebePoderIndicarElColorSecundarioDeUnaPrenda() {
-        prenda.setColorSecundario("Azul");
-        Assert.assertEquals("Azul", prenda.getColorSecundario());
+        prenda.setColorSecundario(color);
+        Assert.assertEquals(color, prenda.getColorSecundario());
+    }
+
+    @Test
+    public void unUsuarioDebePoderIndicarLaTramaQueTieneElMaterial() {
+        Assert.assertEquals(Trama.RAYADA, TestHelper.ProveedorPrendas.camisaConTramaRayada().getTrama());
+    }
+
+    @Test
+    public void copiaDeUnaPrenda() {
+        Prenda copia =  prenda.copy();
+        Assert.assertEquals(prenda.getTipo(), copia.getTipo());
+        Assert.assertEquals(prenda.getColorPrincipal(), copia.getColorPrincipal());
+        Assert.assertEquals(prenda.getMaterial(), copia.getMaterial());
+        Assert.assertEquals(prenda.getCategoria(), copia.getCategoria());
+        Assert.assertEquals(prenda.getColorSecundario(), copia.getColorSecundario());
+        Assert.assertEquals(prenda.getTrama(), copia.getTrama());
     }
 }
 
