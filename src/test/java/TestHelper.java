@@ -3,47 +3,19 @@ public class TestHelper {
     public static class ProveedorPrendas {
 
         public static Prenda pantalonSinTipo() {
-            Prenda prenda = prendaVacia();
-            prenda.setTela("Algodon");
-            prenda.setColorPrincipal("Azul");
-
-            return prenda;
+            return new Prenda(null, Material.ALGODON, new Color(155,233, 444), null);
         }
 
-        public static Prenda anteojosSinCategoria() {
-            Prenda prenda = prendaVacia();
-            prenda.setTipo(TipoPrenda.ANTEOJOS);
-            prenda.setTela("Algodon");
-            prenda.setColorPrincipal("Amarillo");
-            return prenda;
-        }
-
-        public static Prenda zapatosSinTela() {
-            Prenda prenda = prendaVacia();
-            prenda.setTipo(TipoPrenda.ZAPATOS);
-            prenda.setColorPrincipal("Marron");
-            return prenda;
+        public static Prenda zapatosSinMaterial() {
+            return new Prenda(TipoPrenda.ZAPATOS, null, new Color(123,233, 433), null);
         }
 
         public static Prenda camisaSinColorPrincipal() {
-            Prenda prenda = prendaVacia();
-            prenda.setTipo(TipoPrenda.CAMISA);
-            prenda.setTela("Algodon");
-            return prenda;
+            return new Prenda(TipoPrenda.CAMISA, Material.ALGODON, null, null);
         }
-
 
         public static Prenda parDeAnteojos() {
-            Prenda prenda = prendaVacia();
-            prenda.setTipo(TipoPrenda.ANTEOJOS);
-            prenda.setTela("Plastico");
-            prenda.setColorPrincipal("Negro");
-            return prenda;
+           return new Prenda(TipoPrenda.ANTEOJOS, Material.PLASTICO,new Color(1,2, 4), null);
         }
-
-        public static Prenda prendaVacia() {
-            return new Prenda();
-        }
-
     }
 }

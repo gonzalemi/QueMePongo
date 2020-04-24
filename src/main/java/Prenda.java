@@ -1,8 +1,19 @@
 public class Prenda {
     private TipoPrenda tipo;
-    private String tela = "";
-    private String colorPrincipal = "";
-    private String colorSecundario= "";
+    private Material material;
+    private Color colorPrincipal;
+    private String colorSecundario;
+
+    private ValidadorPrenda validadorPrenda = new ValidadorPrenda();
+
+    public Prenda(TipoPrenda tipo, Material material, Color colorPrincipal, String colorSecundario) {
+        this.tipo = tipo;
+        this.material = material;
+        this.colorPrincipal = colorPrincipal;
+        this.colorSecundario = colorSecundario;
+
+        validadorPrenda.validar(this);
+    }
 
     public TipoPrenda getTipo() {
         return tipo;
@@ -24,20 +35,20 @@ public class Prenda {
         this.colorSecundario = colorSecundario;
     }
 
-    public String getTela() {
-        return tela;
+    public Material getMaterial() {
+        return material;
     }
 
-    public void setTela(String tela) {
-        this.tela = tela;
+    public void setMaterial(Material material) {
+        this.material = material;
     }
 
-    public String getColorPrincipal() {
+    public Color getColorPrincipal() {
         return colorPrincipal;
     }
 
-    public void setColorPrincipal(String colorPrincipal) {
-        this.colorPrincipal = colorPrincipal;
+    public void setColorPrincipal(Color Color) {
+        this.colorPrincipal = Color;
     }
 }
 

@@ -4,6 +4,7 @@ public class ValidadorPrenda {
         validarTipo(prenda);
         validarTela(prenda);
         validarColorPrincipal(prenda);
+
     }
 
     private void validarTipo(Prenda prenda) {
@@ -12,12 +13,12 @@ public class ValidadorPrenda {
     }
 
     private void validarTela(Prenda prenda) {
-        if (prenda.getTela().isEmpty())
-            throw new SinTelaException("La prenda seleccionada no posee tela");
+        if (prenda.getMaterial() == null)
+            throw new SinMaterialException("La prenda seleccionada no posee material");
     }
 
     private void validarColorPrincipal(Prenda prenda) {
-        if (prenda.getColorPrincipal().isEmpty())
+        if (prenda.getColorPrincipal() == null)
             throw new SinColorPrincipalException("La prenda seleccionada no posee color principal");
     }
 
@@ -27,8 +28,8 @@ public class ValidadorPrenda {
         }
     }
 
-    public class SinTelaException extends RuntimeException {
-        public SinTelaException(String message) {
+    public class SinMaterialException extends RuntimeException {
+        public SinMaterialException(String message) {
             super(message);
         }
     }

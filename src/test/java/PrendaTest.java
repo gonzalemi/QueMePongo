@@ -7,7 +7,7 @@ public class PrendaTest {
 
     @Before
     public void init() {
-        prenda = TestHelper.ProveedorPrendas.prendaVacia();
+        prenda = TestHelper.ProveedorPrendas.parDeAnteojos();
     }
 
     @Test
@@ -23,14 +23,16 @@ public class PrendaTest {
 
     @Test
     public void unUsuarioDebePoderIndicarLaTelaDeUnaPrenda() {
-        prenda.setTela("Algodon");
-        Assert.assertEquals("Algodon", prenda.getTela());
+        prenda.setMaterial(Material.ALGODON);
+        Assert.assertEquals(Material.ALGODON, prenda.getMaterial());
     }
 
     @Test
     public void unUsuarioDebePoderIndicarElColorPrincipalDeUnaPrenda() {
-        prenda.setColorPrincipal("Verde");
-        Assert.assertEquals("Verde", prenda.getColorPrincipal());
+        Color color = new Color(1,2, 4);
+        prenda.setColorPrincipal(color);
+
+        Assert.assertEquals(color, prenda.getColorPrincipal());
     }
 
     @Test

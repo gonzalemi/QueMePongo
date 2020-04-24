@@ -22,8 +22,8 @@ public class ValidadorPrendaTest {
 
     @Test
     public void debeValidarCorrectamentePrendasSinTela() {
-        thrown.expect(ValidadorPrenda.SinTelaException.class);
-        validador.validar(TestHelper.ProveedorPrendas.zapatosSinTela());
+        thrown.expect(ValidadorPrenda.SinMaterialException.class);
+        validador.validar(TestHelper.ProveedorPrendas.zapatosSinMaterial());
     }
 
     @Test

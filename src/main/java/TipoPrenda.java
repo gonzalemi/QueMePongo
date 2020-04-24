@@ -1,7 +1,7 @@
 public enum TipoPrenda {
     ZAPATOS(CategoriaPrenda.CALZADO),
-    CAMISA(CategoriaPrenda.SUPERIOR),
-    PANTALON(CategoriaPrenda.INFERIOR),
+    CAMISA(CategoriaPrenda.PARTE_SUPERIOR),
+    PANTALON(CategoriaPrenda.PARTE_INFERIOR),
     ANTEOJOS(CategoriaPrenda.ACCESORIOS);
 
     private CategoriaPrenda categoria;
