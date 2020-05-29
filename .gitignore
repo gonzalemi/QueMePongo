@@ -20,3 +20,7 @@ hs_err_pid*
 *.class
 # Log file
 *.log
+
+*.classpath
+*.project
+**/.settings/

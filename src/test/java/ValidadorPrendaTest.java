@@ -1,34 +1,24 @@
-import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class ValidadorPrendaTest {
-    private ValidadorPrenda validador;
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
-
-    @Before
-    public void init() {
-        validador = new ValidadorPrenda();
-    }
-
-    @Test
+    @Test(expected = ValidadorPrenda.SinTipoException.class)
     public void debeValidarCorrectamentePrendasSinTipo() {
-        thrown.expect(ValidadorPrenda.SinTipoException.class);
-        validador.validar(TestHelper.ProveedorPrendas.pantalonSinTipo());
+        new ValidadorPrenda(TestHelper.ProveedorPrendas.pantalonSinTipo()).validar();
     }
 
-    @Test
+    @Test(expected = ValidadorPrenda.SinMaterialException.class)
     public void debeValidarCorrectamentePrendasSinTela() {
-        thrown.expect(ValidadorPrenda.SinMaterialException.class);
-        validador.validar(TestHelper.ProveedorPrendas.zapatosSinMaterial());
+        new ValidadorPrenda(TestHelper.ProveedorPrendas.zapatosSinMaterial()).validar();
     }
 
-    @Test
+    @Test(expected = ValidadorPrenda.SinColorPrincipalException.class)
     public void debeValidarCorrectamentePrendasSinColorPrincipal() {
-        thrown.expect(ValidadorPrenda.SinColorPrincipalException.class);
-        validador.validar(TestHelper.ProveedorPrendas.camisaSinColorPrincipal());
+        new ValidadorPrenda(TestHelper.ProveedorPrendas.camisaSinColorPrincipal()).validar();
+    }
+
+    @Test(expected = ValidadorPrenda.MaterialesInadecuadosException.class)
+    public void debeValidarCorrectamentePrendasConMaterialesInadecuados() {
+        new ValidadorPrenda(TestHelper.ProveedorPrendas.pantalonConMaterialesInadecuados()).validar();
     }
 }

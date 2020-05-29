@@ -1,10 +1,10 @@
 public class PrendaBuilder {
-    private TipoPrenda tipo;
+    private Tipo tipo;
     private Material material;
     private Color colorPrincipal;
-    private String colorSecundario;
+    private Trama trama;
 
-    public PrendaBuilder setTipo(TipoPrenda tipo) {
+    public PrendaBuilder setTipo(Tipo tipo) {
         this.tipo = tipo;
         return this;
     }
@@ -19,7 +19,12 @@ public class PrendaBuilder {
         return this;
     }
 
+    public PrendaBuilder setTrama(Trama trama) {
+        this.trama = trama;
+        return this;
+    }
+
     public Prenda Prenda() {
-        return new Prenda(tipo, material, colorPrincipal);
+        return new Prenda(tipo, material, colorPrincipal, trama);
     }
 }

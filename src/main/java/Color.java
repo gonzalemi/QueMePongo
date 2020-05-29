@@ -1,7 +1,7 @@
 public class Color {
-    private int rojo;
-    private int verde;
-    private int azul;
+    private final int rojo;
+    private final int verde;
+    private final int azul;
 
     public Color(int rojo, int verde, int azul) {
         this.rojo = rojo;

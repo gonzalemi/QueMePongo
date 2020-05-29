@@ -1,42 +1,59 @@
 public class ValidadorPrenda {
 
-    public void validar(Prenda prenda) {
-        validarTipo(prenda);
-        validarMaterial(prenda);
-        validarColorPrincipal(prenda);
+    private final Prenda prenda;
 
+    public ValidadorPrenda(Prenda prenda) {
+       this.prenda = prenda;
     }
 
-    private void validarTipo(Prenda prenda) {
+    public void validar() {
+        validarTipo();
+        validarMaterial();
+        validarColorPrincipal();
+        validarMaterialesAdecuados();
+    }
+
+    private void validarTipo() {
         if (prenda.getTipo() == null)
-            throw new SinTipoException("La prenda seleccionada no posee tipo");
+            throw new SinTipoException();
     }
 
-    private void validarMaterial(Prenda prenda) {
+    private void validarMaterial() {
         if (prenda.getMaterial() == null)
-            throw new SinMaterialException("La prenda seleccionada no posee material");
+            throw new SinMaterialException();
     }
 
-    private void validarColorPrincipal(Prenda prenda) {
+    private void validarColorPrincipal() {
         if (prenda.getColorPrincipal() == null)
-            throw new SinColorPrincipalException("La prenda seleccionada no posee color principal");
+            throw new SinColorPrincipalException();
     }
 
-    public class SinTipoException extends RuntimeException {
-        public SinTipoException(String message) {
-            super(message);
+    private void validarMaterialesAdecuados() {
+
+        if(!prenda.getTipo().admiteMaterial(prenda.getMaterial())){
+            throw new MaterialesInadecuadosException(prenda.getTipo(), prenda.getMaterial());
         }
     }
 
-    public class SinMaterialException extends RuntimeException {
-        public SinMaterialException(String message) {
-            super(message);
+    public static class SinTipoException extends RuntimeException {
+        public SinTipoException() {
+            super("La prenda debe poseer un tipo");
         }
     }
 
-    public class SinColorPrincipalException extends RuntimeException {
-        public SinColorPrincipalException(String message) {
-            super(message);
+    public static class SinMaterialException extends RuntimeException {
+        public SinMaterialException() {
+            super("La prenda debe poseer un material");
+        }
+    }
+
+    public static class SinColorPrincipalException extends RuntimeException {
+        public SinColorPrincipalException(){ super("La prenda debe poseer un color principal"); }
+    }
+
+    public static class MaterialesInadecuadosException extends RuntimeException {
+        public MaterialesInadecuadosException(Tipo tipo, Material material) {
+            super("Un(a) " + tipo + "no puede ser de " + material);
         }
     }
 }

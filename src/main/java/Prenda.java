@@ -1,36 +1,25 @@
 public class Prenda {
-    private TipoPrenda tipo;
-    private Material material;
+    private final Tipo tipo;
+    private final Material material;
     private Color colorPrincipal;
     private Color colorSecundario;
+    private Trama trama = Trama.LISA;
 
-    private PrendaBuilder builder;
-    private ValidadorPrenda validadorPrenda = new ValidadorPrenda();
 
-    public Prenda(TipoPrenda tipo, Material material, Color colorPrincipal) {
+    public Prenda(Tipo tipo, Material material, Color colorPrincipal, Trama trama) {
         this.tipo = tipo;
         this.material = material;
         this.colorPrincipal = colorPrincipal;
+        this.trama = trama;
 
-        validadorPrenda.validar(this);
+        new ValidadorPrenda(this).validar();
     }
 
-    public Prenda copy() {
-        Prenda copia = new  Prenda(this.tipo, this.material, this.colorPrincipal);
-        copia.setColorSecundario(this.colorSecundario);
-
-        return  copia;
-    }
-
-    public TipoPrenda getTipo() {
+    public Tipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoPrenda tipo) {
-        this.tipo = tipo;
-    }
-
-    public CategoriaPrenda getCategoria() {
+    public Categoria getCategoria() {
         return getTipo().getCategoria();
     }
 
@@ -46,20 +35,12 @@ public class Prenda {
         return material;
     }
 
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-
     public Color getColorPrincipal() {
         return colorPrincipal;
     }
 
-    public void setColorPrincipal(Color Color) {
-        this.colorPrincipal = Color;
-    }
-
     public Trama getTrama() {
-        return material.getTrama();
+        return trama;
     }
 }
 
