@@ -1,8 +1,11 @@
+package Prenda;
+
 public class PrendaBuilder {
     private Tipo tipo;
     private Material material;
     private Color colorPrincipal;
     private Trama trama;
+    private Integer temperaturaMaxima;
 
     public PrendaBuilder setTipo(Tipo tipo) {
         this.tipo = tipo;
@@ -24,7 +27,12 @@ public class PrendaBuilder {
         return this;
     }
 
+    public PrendaBuilder setTemperaturaMaxima(Integer temperaturaMaxima) {
+        this.temperaturaMaxima = temperaturaMaxima;
+        return this;
+    }
+
     public Prenda Prenda() {
-        return new Prenda(tipo, material, colorPrincipal, trama);
+        return new Prenda(tipo, material, colorPrincipal, trama, temperaturaMaxima);
     }
 }

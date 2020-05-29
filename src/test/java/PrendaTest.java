@@ -1,3 +1,9 @@
+import Prenda.Color;
+import Prenda.Tipo;
+import Prenda.Categoria;
+import Prenda.Trama;
+import Prenda.Prenda;
+import Prenda.Material;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

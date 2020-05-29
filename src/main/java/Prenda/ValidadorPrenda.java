@@ -1,3 +1,5 @@
+package Prenda;
+
 public class ValidadorPrenda {
 
     private final Prenda prenda;

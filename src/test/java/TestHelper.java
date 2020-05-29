@@ -1,3 +1,11 @@
+import Prenda.Color;
+import Prenda.Tipo;
+import Prenda.Trama;
+import Prenda.PrendaBuilder;
+import Prenda.Prenda;
+import Prenda.Material;
+
+
 public class TestHelper {
 
     public static class ProveedorPrendas {
@@ -31,6 +39,7 @@ public class TestHelper {
                     .setTipo(Tipo.ANTEOJOS)
                     .setMaterial(Material.PLASTICO)
                     .setColorPrincipal(color)
+                    .setTemperaturaMaxima(10)
                     .Prenda();
         }
 
@@ -40,6 +49,7 @@ public class TestHelper {
                     .setMaterial(Material.ALGODON)
                     .setColorPrincipal(color)
                     .setTrama(Trama.RAYADA)
+                    .setTemperaturaMaxima(11)
                     .Prenda();
         }
 
@@ -49,6 +59,7 @@ public class TestHelper {
                     .setMaterial(Material.ALGODON)
                     .setColorPrincipal(color)
                     .setTrama(Trama.A_CUADROS)
+                    .setTemperaturaMaxima(10)
                     .Prenda();
 
             prenda.setColorSecundario(color);

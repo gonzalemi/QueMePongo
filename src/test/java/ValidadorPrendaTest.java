@@ -1,3 +1,4 @@
+import Prenda.ValidadorPrenda;
 import org.junit.Test;
 
 public class ValidadorPrendaTest {
