@@ -1,5 +1,5 @@
 import Prenda.Prenda;
-import Prenda.PrendaService;
+import Sugerencias.GeneradorSugerenciasImpl;
 import Sugerencias.ServicioClimaAdapterAccuWeather;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,9 +13,9 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class TestPrendaService {
+public class TestGeneradorSugerencias {
 
-    PrendaService servicio;
+    GeneradorSugerenciasImpl generador;
     List<Prenda> prendas = new ArrayList<>();
 
     @Mock
@@ -30,14 +30,14 @@ public class TestPrendaService {
         prendas.add(TestHelper.ProveedorPrendas.pantalonConColorSecundario());
         prendas.add(TestHelper.ProveedorPrendas.parDeAnteojos());
 
-        servicio = new PrendaService(adapter);
+        generador = new GeneradorSugerenciasImpl(adapter);
     }
 
     @Test
     public void seGeneranSugerenciasAcordesALasCondicionesClimaticas() {
 
         when(adapter.getTemperatura(anyString())).thenReturn(11);
-        Assert.assertEquals(1, servicio.getPrendasAptas(prendas, "Buenos Aires").size());
+        Assert.assertEquals(1, generador.getPrendasAptas(prendas, "Buenos Aires").size());
         Mockito.verify(adapter, Mockito.only());
     }
 }
