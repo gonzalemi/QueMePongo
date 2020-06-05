@@ -8,6 +8,7 @@ Aclaración, en esta entrega solo realicé el siguiente pseudocódigo (el codigo
      ![Guardarropas](Guardarropas.png) 
 
 - La sugerencia la modelo como un Command, utilizo clase abstracta para poder controlar el estado y definir template methods:
+
      ![Sugerencia_Abstract](Sugerencia_Abstract.png) 
  
 - Un primer Concrete Comand para modelar la operación de agregar una prenda:
