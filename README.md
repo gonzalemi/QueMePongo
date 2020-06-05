@@ -1,9 +1,18 @@
 
-# Ejercicio Que Me Pongo
+# Ejercicio Que Me Pongo Iteración 5
 
- ![Diagrama](Diagrama.png) 
+Aclaración, en esta entrega solo realicé el siguiente pseudocódigo (el codigo restante en el repo corresponde a entregas anteriores)
+
+- Decidí modelar el guardarropas como una clase y el criterio como un enum:
+
+ ![Guardarropas](Guardarropas.png) 
+
+- La sugerencia la modelo como un Command, utilizo clase abstracta para poder controlar el estado y definir template methods:
+  ![Sugerencia Abstract](Sugerencia Abstract.png) 
  
-Enunciado:
-- Iteración 1 [link](https://docs.google.com/document/d/1k1f-9AuIohlBGB2soSNePJ6jLxM37_tZeSD-hW_esIQ/edit#)  
-- Iteración 2 [link](https://docs.google.com/document/d/10j6XB9zIhl5xox2xBEDEFsgPmueHMkyvLSHcLxl_27Y/edit#)
-- Iteración 4 [link](https://docs.google.com/document/d/1sy9S9EeIQr8fhatKnfTCgOfjVniJDu2viI-Av0gn0xY/edit#)
+- Un primer Concrete Comand para modelar la operación de agregar una prenda:
+  ![Agregar Prenda](Agregar Prenda.png) 
+  
+- Un Segundo Concrete Comand para modelar la operación de quitar una prenda:
+  ![Quitar Prenda](Quitar Prenda.png) 
+ 
