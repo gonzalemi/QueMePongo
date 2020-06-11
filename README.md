@@ -9,4 +9,4 @@ Con la ayuda del patrón Observer, puede notificar a distintos individuos quiene
 
 
 
-     ![Diagrama](./QMP6/Diagrama_QMP6.png) 
+     ![Diagrama_QMP6](./QMP6/Diagrama_QMP6.png) 
