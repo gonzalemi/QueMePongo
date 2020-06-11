@@ -7,4 +7,6 @@ El ServicioMeteorologico de la entrega 5 ahora tiene la responsabilidad de obten
 Con la ayuda del patrón Observer, puede notificar a distintos individuos quienes toman diferentes acciones según corresponda.
 
 
+
+
      ![Diagrama](./QMP6/Diagrama_QMP6.png) 
