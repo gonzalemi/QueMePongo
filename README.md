@@ -7,4 +7,4 @@ Con la ayuda del patrón Observer, puede notificar a distintos individuos para c
 
 - Decidí modelar el guardarropas como una clase y el criterio como un enum:
 
-     ![Diagrama](QMP6/Guardarropas.png) 
+     ![Diagrama](./QMP6/Diagrama_QMP6.png) 
